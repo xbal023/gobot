@@ -120,6 +120,10 @@ func (ball *S) GetMetadata(jid types.JID) (*types.GroupInfo)  {
 	return val
 }
 
+func (ball *S) Joining(code string) {
+	ball.Conn.JoinGroupWithLink(code)
+}
+
 func (ball *S) GetInfoLink(code string) (*types.GroupInfo) {
 	val, _ := ball.Conn.GetGroupInfoFromLink(code)
 	return val
@@ -153,20 +157,13 @@ func (ball *S) SetDesc(jid types.JID, topic string)  {
 	ball.Conn.SetGroupTopic(jid, "", "", topic)
 }
 
-func (ball *S) DelMsg(send types.JID, id string) {
+func (ball *S) DelMsg(send types.JID, id types.MessageID) {
 	ball.Conn.SendMessage(context.Background(), send, "", ball.Conn.BuildRevoke(ball.M.Info.Chat, send, id))
 }
 
 func (ball *S) SetLink(jid types.JID, revoke bool) string {
 	val, _ := ball.Conn.GetGroupInviteLink(jid, revoke)
 	return val
-}
-
-func (ball *S) Joining(link string) {
-	_, err := ball.Conn.JoinGroupWithLink(link)
-	if err != nil {
-		fmt.Println(err)
-	}
 }
 
 func (ball *S) PollMsg(jid types.JID, teks string, isi []string)	 {
