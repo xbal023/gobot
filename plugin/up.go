@@ -11,7 +11,7 @@ import (
 	
 func Update(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("Fitur ini khusus owner")
+		ball.Reply("Fitur ini khusus owner", true)
 		return
 	}
 	email := os.Getenv("EMAIL_GH")
@@ -19,8 +19,8 @@ func Update(ball *y.S, m *x.Parse)  {
 	caption := helper.GenerateID()
 	res, err := exec.Command("bash", "-c", `git config --global user.email ` +email+ ` && git config --global user.name `+username+` && git add . && git commit -m `+caption+` && git push`).Output()
 	if err != nil {
-		ball.Reply(fmt.Sprintf("%v", err))
+		ball.Reply(fmt.Sprintf("%v", err), true)
 		return
 	}
-	ball.Reply(string(res))
+	ball.Reply(string(res), true)
 }

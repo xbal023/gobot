@@ -10,7 +10,7 @@ import (
 	
 func Down(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("fitur ini khusus owner")
+		ball.Reply("fitur ini khusus owner", true)
 		return
 	}
 	if m.Quoted.Media != nil {
@@ -30,6 +30,6 @@ func Down(ball *y.S, m *x.Parse)  {
 		// ball.Reply(string(jsonRes))
 		fmt.Println(val)
 	} else {
-		ball.Reply("Balas atau reply media dengan command")
+		ball.Reply("Balas atau reply media dengan command", true)
 	}
 }

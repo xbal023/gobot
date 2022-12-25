@@ -37,5 +37,5 @@ OWNER
 `+`Bot ini dibuat dengan Bahasa Golang`+`
 `+`Library source:`+`
 `+`https://github.com/tulir/whatsmeow`
-	ball.Reply(menu)
+	ball.Reply(menu, true)
 }

@@ -9,13 +9,13 @@ import (
 	
 func Execute(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("Fitur ini khusus owner")
+		ball.Reply("Fitur ini khusus owner", true)
 		return
 	}
 	res, err := exec.Command("bash", "-c", m.Query).Output()
 	if err != nil {
-		ball.Reply(fmt.Sprintf("%v", err))
+		ball.Reply(fmt.Sprintf("%v", err), true)
 		return
 	}
-	ball.Reply(string(res))
+	ball.Reply(string(res), true)
 }

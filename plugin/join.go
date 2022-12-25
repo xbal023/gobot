@@ -7,11 +7,11 @@ import (
 	
 func Join(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("fitur ini khusus owner")
+		ball.Reply("fitur ini khusus owner", true)
 		return
 	}
 	if m.Query == "" {
-		ball.Reply("Masukan link group")
+		ball.Reply("Masukan link group", true)
 		return
 	}
 	ball.Joining(m.Query);

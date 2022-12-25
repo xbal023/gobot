@@ -10,7 +10,7 @@ import (
 	
 func Metadata(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("fitur ini khusus owner")
+		ball.Reply("fitur ini khusus owner", true)
 		return
 	}
 	val := ball.GetMetadata(*m.Chat)
@@ -18,5 +18,5 @@ func Metadata(ball *y.S, m *x.Parse)  {
 	if err != nil {
 		fmt.Println(err)
 	}
-	ball.Reply(string(jsonRes))
+	ball.Reply(string(jsonRes), true)
 }

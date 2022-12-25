@@ -9,9 +9,9 @@ import (
 	
 func Bongkar(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("fitur ini khusus owner")
+		ball.Reply("fitur ini khusus owner", true)
 		return
 	}
 	jsonRes, _ := json.MarshalIndent(m, "", " ")
-	ball.Reply(string(jsonRes))
+	ball.Reply(string(jsonRes), true)
 }

@@ -16,6 +16,6 @@ func Stiker(ball *y.S, m *x.Parse)  {
 		st, _ := wasticker.NewSticker(val).ToByte()
 		ball.SendStik(*m.Chat, st)
 	} else {
-		ball.Reply("Balas atau reply media dengan command")
+		ball.Reply("Balas atau reply media dengan command", true)
 	}
 }

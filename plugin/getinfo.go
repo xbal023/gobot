@@ -7,11 +7,11 @@ import (
 	
 func GetInfoGroup(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn {
-		ball.Reply("fitur ini khusus owner")
+		ball.Reply("fitur ini khusus owner", true)
 		return
 	}
 	if len(m.Query) < 1 {
-		ball.Reply("Masukan link yang ingin di ambil info");
+		ball.Reply("Masukan link yang ingin di ambil info", true);
 		return
 	}
 	val := ball.GetInfoLink(m.Query)
@@ -27,5 +27,5 @@ func GetInfoGroup(ball *y.S, m *x.Parse)  {
 	} else {
 		editInfo = "Tidak Boleh"
 	}
-	ball.Reply(`INFO GROUP\n\nNama Group: `+ string(val.Name)+ `\nID: ` +val.JID.String()+ `\nEdit info: ` +editInfo+ `\nKirim Pesan: `+kirimPesan+ `\nDeskripsi: ` +string(val.Topic))
+	ball.Reply(`INFO GROUP\n\nNama Group: `+ string(val.Name)+ `\nID: ` +val.JID.String()+ `\nEdit info: ` +editInfo+ `\nKirim Pesan: `+kirimPesan+ `\nDeskripsi: ` +string(val.Topic), true)
 }
