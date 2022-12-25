@@ -43,6 +43,9 @@ func Cmd(conn *whatsmeow.Client, up *events.Message) {
 	case "exec":
 		go i.Execute(ball, m);
 	break;
+	case "u":
+		go i.Update(ball, m);
+	break;
 	case "stiker":
 		go i.Stiker(ball, m);
 	break;
