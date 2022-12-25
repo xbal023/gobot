@@ -18,35 +18,11 @@ func Cmd(conn *whatsmeow.Client, up *events.Message) {
 	case "menu":
 		go i.Menu(ball, m);
 	break;
-	case "ping":
-		go i.Ping(ball, m);
+	case "del", "d":
+		go i.Delete(ball, m);
 	break;
-	// OWNER
-	case "bongkar":
-		go i.Bongkar(ball, m);
-	break;
-	case "upload":
-		go i.Upload(ball, m);
-	break;
-	case "metadata":
-		go i.Metadata(ball, m);
-	break;
-	case "getinfo":
-		go i.GetInfoGroup(ball, m);
-	break;
-	case "out":
-		go i.Out(ball, m);
-	break;
-	case "download":
-		go i.Down(ball, m);
-	break;
-	case "exec":
-		go i.Execute(ball, m);
-	break;
-	case "u":
-		go i.Update(ball, m);
-	break;
-	case "stiker":
+	// Convert
+	case "stiker", "s":
 		go i.Stiker(ball, m);
 	break;
 	// GROUP
@@ -79,6 +55,34 @@ func Cmd(conn *whatsmeow.Client, up *events.Message) {
 	break;
 	case "gcunlock", "unlock":
 		go i.GcUnlock(ball, m);
+	break;
+		// OWNER
+	case "bongkar":
+		go i.Bongkar(ball, m);
+	break;
+	case "upload":
+		go i.Upload(ball, m);
+	break;
+	case "metadata":
+		go i.Metadata(ball, m);
+	break;
+	case "getinfo":
+		go i.GetInfoGroup(ball, m);
+	break;
+	case "out":
+		go i.Out(ball, m);
+	break;
+	case "join":
+		go i.Join(ball, m);
+	break;
+	case "download":
+		go i.Down(ball, m);
+	break;
+	case "exec":
+		go i.Execute(ball, m);
+	break;
+	case "u":
+		go i.Update(ball, m);
 	break;
 	}
 }

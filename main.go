@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"os/exec"
 	"os/signal"
 	"syscall"
 
@@ -59,6 +60,9 @@ func main() {
 		}
 	} else {
 		err = conn.Connect()
+		cmd := exec.Command("clear")
+		cmd.Stdout = os.Stdout
+		cmd.Run()
 		fmt.Println(v.InCyan("Koneksi telah tersambung whatsapp web..."))
 		fmt.Println(v.InPurple("------------------------------------------------"))
 		if err != nil {

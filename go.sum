@@ -4,6 +4,8 @@ github.com/DrSmithFr/go-console v0.0.0-20221206120830-097bd4613151 h1:/Oly1n+RZ4
 github.com/DrSmithFr/go-console v0.0.0-20221206120830-097bd4613151/go.mod h1:i0k73RL6EtTDu5aa5HCm6P9zJieKYlwNUlqOr5b9eCw=
 github.com/TwiN/go-color v1.4.0 h1:fNbOwOrvup5oj934UragnW0B1WKaAkkB85q19Y7h4ng=
 github.com/TwiN/go-color v1.4.0/go.mod h1:0QTVEPlu+AoCyTrho7bXbVkrCkVpdQr7YF7PYWEtSxM=
+github.com/aditya43/clear-shell-screen-golang v0.0.0-20200419021057-6fa7bb4a928b h1:GK0oDR4+OKyNWkiRgprzp395BHqVYE80BiYheAYYCXY=
+github.com/aditya43/clear-shell-screen-golang v0.0.0-20200419021057-6fa7bb4a928b/go.mod h1:vXIQKo/MVgYcH/9MmBMuzW71nCyVOC0kCQoidq/Ob6U=
 github.com/arugaz/filetype v1.0.1 h1:HnhkNY3eogYzpQTatTlOmLG0q74zGcoYElA3XQ8Extc=
 github.com/arugaz/filetype v1.0.1/go.mod h1:pEivN8fEHspAJq1SCSbPAxb2xLWhwep6VkQxztH2tjo=
 github.com/arugaz/go-rlottie v0.1.0 h1:/rQaoBoSEG2T+PW56ANvpkgOHdYYtGZpvxzjI6touZ8=
@@ -28,6 +30,11 @@ go.mau.fi/whatsmeow v0.0.0-20221213225758-70ef67df3c68 h1:uieThnMYyFDdUNDrHxauuZ
 go.mau.fi/whatsmeow v0.0.0-20221213225758-70ef67df3c68/go.mod h1:2yweL8nczvtlIxkrvCb0y8xiO13rveX9lJPambwYV/E=
 golang.org/x/crypto v0.0.0-20221012134737-56aed061732a h1:NmSIgad6KjE6VvHciPZuNRTKxGhlPfD6OA87W/PLkqg=
 golang.org/x/crypto v0.0.0-20221012134737-56aed061732a/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
+golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 h1:SrN+KX8Art/Sf4HNj6Zcz06G7VEz+7w9tdXTPOZ7+l4=
+golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1 h1:v+OssWQX+hTHEmOBgwxdZxK4zHq3yOs8F9J7mk0PY8E=
+golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 google.golang.org/protobuf v1.26.0-rc.1/go.mod h1:jlhhOSvTdKEhbULTjvd4ARK9grFBp09yW+WbY/TyQbw=
 google.golang.org/protobuf v1.28.1 h1:d0NfwRgPtno5B1Wa6L2DAG+KivqkdutMf1UhdNx175w=

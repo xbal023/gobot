@@ -17,7 +17,7 @@ var (
 
 type QuotedStruct struct {
 	Id string
-	Sender string
+	Sender *types.JID
 	Body string
 	Media x.DownloadableMessage
 	TypeM string
@@ -47,6 +47,7 @@ type Parse struct {
 func Parser(ball *x.S, up *events.Message) *Parse {
 	chat := types.JID(up.Info.Chat)
 	sender := types.JID(up.Info.Sender)
+	senderQ, _ := types.ParseJID(up.Message.GetExtendedTextMessage().GetContextInfo().GetParticipant())
 	times := time.Time(up.Info.Timestamp)
 	extendedText := up.Message.GetExtendedTextMessage().GetText()
 	conversationText := up.Message.GetConversation()
@@ -149,7 +150,7 @@ func Parser(ball *x.S, up *events.Message) *Parse {
 	TypeM: typeM,
 	Quoted: QuotedStruct{
 		Id: up.Message.GetExtendedTextMessage().GetContextInfo().GetStanzaId(),
-		Sender: up.Message.GetExtendedTextMessage().GetContextInfo().GetParticipant(),
+		Sender: &senderQ,
 		Body: quotedBody,
 		Media: mediia,
 		TypeM: typeQM,

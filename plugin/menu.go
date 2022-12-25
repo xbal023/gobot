@@ -8,7 +8,13 @@ import (
 func Menu(ball *y.S, m *x.Parse)  {
 	menu := `MENU SELF`+`
 
+`+`
+CONVERT
+` +m.Pref+ `stiker`+`
+`+`
+GRUP
 ` +m.Pref+ `setname`+`
+` +m.Pref+ `setppgc`+`
 ` +m.Pref+ `setdesk`+`
 ` +m.Pref+ `gclink`+`
 ` +m.Pref+ `gcrevoke`+`
@@ -17,13 +23,19 @@ func Menu(ball *y.S, m *x.Parse)  {
 ` +m.Pref+ `gclock`+`
 ` +m.Pref+ `gcunlock`+`
 ` +m.Pref+ `polling`+`
-` +m.Pref+ `ping`+`
+`+`
+OWNER
 ` +m.Pref+ `getinfo *link*`+`
-` +m.Pref+ `out`+`
-` +m.Pref+ `metadata`+`
+` +m.Pref+ `metadata *inGroup*`+`
+` +m.Pref+ `download`+`
 ` +m.Pref+ `bongkar`+`
+` +m.Pref+ `upload`+`
+` +m.Pref+ `out *inGroup*`+`
+` +m.Pref+ `exec`+`
+` +m.Pref+ `u`+`
 
 `+`Bot ini dibuat dengan Bahasa Golang`+`
-`+`Library dari whatsmeow: https://github.com/tulir/whatsmeow`
+`+`Library source:`+`
+`+`https://github.com/tulir/whatsmeow`
 	ball.Reply(menu)
 }

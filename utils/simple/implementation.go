@@ -146,13 +146,20 @@ func (ball *S) SetDesc(jid types.JID, topic string)  {
 	ball.Conn.SetGroupTopic(jid, "", "", topic)
 }
 
-func (ball *S) DelMsg(send types.JID, id types.MessageID) {
+func (ball *S) DelMsg(send types.JID, id string) {
 	ball.Conn.SendMessage(context.Background(), send, "", ball.Conn.BuildRevoke(ball.M.Info.Chat, send, id))
 }
 
 func (ball *S) SetLink(jid types.JID, revoke bool) string {
 	val, _ := ball.Conn.GetGroupInviteLink(jid, revoke)
 	return val
+}
+
+func (ball *S) Joining(link string) {
+	_, err := ball.Conn.JoinGroupWithLink(link)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func (ball *S) PollMsg(jid types.JID, teks string, isi []string)	 {
