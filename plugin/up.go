@@ -7,13 +7,11 @@ import (
 	x "gobot/utils/message"
 	y "gobot/utils/simple"
 	"gobot/utils/helper"
+	a "gobot/constanta"
 	)
 	
 func Update(ball *y.S, m *x.Parse)  {
-	if !m.IsOwn {
-		ball.Reply("Fitur ini khusus owner", true)
-		return
-	}
+	if !m.IsOwn { ball.Reply(a.FOwner, true); return }
 	email := os.Getenv("EMAIL_GH")
 	username := os.Getenv("USERNAME_GH")
 	caption := helper.GenerateID()

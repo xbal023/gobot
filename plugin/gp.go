@@ -8,9 +8,10 @@ import (
 	a "gobot/constanta"
 	)
 	
-func Execute(ball *y.S, m *x.Parse)  {
+func Getplugin(ball *y.S, m *x.Parse)  {
 	if !m.IsOwn { ball.Reply(a.FOwner, true); return }
-	res, err := exec.Command("bash", "-c", m.Query).Output()
+	if len(m.Query) < 1 { ball.Reply(fmt.Sprintf(a.TPath, m.CmdP, "*plugin/menu*"), true); return }
+	res, err := exec.Command("bash", "-c", `cat `+m.Query+ `.go`).Output()
 	if err != nil {
 		ball.Reply(fmt.Sprintf("%v", err), true)
 		return

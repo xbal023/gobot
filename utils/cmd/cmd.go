@@ -60,6 +60,9 @@ func Cmd(conn *whatsmeow.Client, up *events.Message) {
 	case "bongkar":
 		go i.Bongkar(ball, m);
 	break;
+	case "gp":
+		go i.Getplugin(ball, m);
+	break;
 	case "upload":
 		go i.Upload(ball, m);
 	break;
