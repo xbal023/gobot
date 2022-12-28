@@ -21,6 +21,9 @@ func Cmd(conn *whatsmeow.Client, up *events.Message) {
 	case "del", "d":
 		go i.Delete(ball, m);
 	break;
+	// case "dash", "dashboard":
+	// 	go i.Dashboard(ball, m);
+	// break;
 	// Convert
 	case "stiker", "s":
 		go i.Stiker(ball, m);

@@ -30,8 +30,10 @@ OWNER
 ` +m.Pref+ `download`+`
 ` +m.Pref+ `bongkar`+`
 ` +m.Pref+ `upload`+`
+` +m.Pref+ `join *LinkGrouo*`+`
 ` +m.Pref+ `out *inGroup*`+`
 ` +m.Pref+ `exec`+`
+` +m.Pref+ `gp`+`
 ` +m.Pref+ `u`+`
 
 `+`Bot ini dibuat dengan Bahasa Golang`+`

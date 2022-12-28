@@ -23,5 +23,5 @@ func GetInfoGroup(ball *y.S, m *x.Parse)  {
 	} else { 
 		editInfo = "Tidak Boleh"
 	}
-	ball.Reply(fmt.Sprintf("INFO GROUP\n\nNama Group: %s\nID: %s\nDibuat Oleh: %s\nTanggal Pembuatan: %s\nEdit info: %s\nKirim Pesan: %s\nDeskripsi: %s", val.Name, val.JID, val.OwnerJID, val.GroupCreated, editInfo, kirimPesan, val.Topic), true)
+	ball.Reply(fmt.Sprintf("INFO GROUP\n\nNama Group: %s\nID: %s\nDibuat Oleh: %s\nTanggal Pembuatan: %s\nEdit info: %s\nKirim Pesan: %s\nDeskripsi: %s", val.Name, val.JID, val.OwnerJID, val.GroupCreated.Format("2006-01-02 15:04"), editInfo, kirimPesan, val.Topic), true)
 }

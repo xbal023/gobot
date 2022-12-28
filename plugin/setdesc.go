@@ -1,27 +1,17 @@
 package plugin
 
 import (
+	"fmt"
 	x "gobot/utils/message"
 	y "gobot/utils/simple"
+	a "gobot/constanta"
 	)
 	
 func SetDesc(ball *y.S, m *x.Parse)  {
-	if !m.IsGc {
-		ball.Reply("Khusus di group", true)
-		return
-	}
-	if !m.IsBotAdmin {
-		ball.Reply("Bot bukan admin", true)
-		return
-	}
-	if !m.IsAdmin {
-		ball.Reply("Kamu bukan admin!", true)
-		return
-	}
-	if len(m.Query) < 1 {
-		ball.Reply("Masukan isi deskripsi setelah command", true)
-		return
-	}
+	if !m.IsGc { ball.Reply(a.FGroup, true); return }
+	if !m.IsBotAdmin { ball.Reply(a.FBotAdmin, true); return }
+	if !m.IsAdmin { ball.Reply(a.FAdmin, true); return }
+	if len(m.Query) < 1 { ball.Reply(fmt.Sprintf(a.TDesc, m.CmdP, "balbalabalaabalab"), true); return }
 	ball.SetDesc(*m.Chat, m.Query)
-	ball.Reply("Sukses mengganti Deskripsi dengan yg baru", true)
+	ball.Reply(a.GCDesc, true)
 }

@@ -7,11 +7,11 @@ import (
 	)
 	
 func GenerateID() string  {
-	id := make([]byte, 8)
+	id := make([]byte, 14)
 	_, err := rand.Read(id)
 	if err != nil {
 		panic(err)
 	}
-	return "3EB0" + strings.ToUpper(hex.EncodeToString(id)) + "BALL"
+	return strings.ToUpper(hex.EncodeToString(id)) + "BALL"
 }
 

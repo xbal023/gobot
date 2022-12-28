@@ -11,6 +11,7 @@ import (
 	"google.golang.org/protobuf/proto"
 	// waBinary "go.mau.fi/whatsmeow/binary"
 	waProto "go.mau.fi/whatsmeow/binary/proto"
+	"gobot/utils/helper"
 	)
 
 type S struct {
@@ -18,6 +19,7 @@ type S struct {
 	M *events.Message
 }
 
+var id = helper.GenerateID()
 type DownloadableMessage interface {
 	proto.Message
 	GetDirectPath() string
@@ -45,7 +47,7 @@ func (ball *S) Reply(teks string, quoted bool) {
 				QuotedMessage: ball.M.Message,
 			}
 	}
-	ball.Conn.SendMessage(context.Background(), ball.M.Info.Chat, "", &waProto.Message{
+	ball.Conn.SendMessage(context.Background(), ball.M.Info.Chat, id, &waProto.Message{
 		ExtendedTextMessage: &waProto.ExtendedTextMessage{
 			Text: proto.String(teks),
 			ContextInfo: quot,
@@ -65,7 +67,7 @@ func (ball *S) SendImg(jid types.JID, img []byte, teks string, mime string) {
 		FileSha256: resp.FileSHA256,
 		FileLength: &resp.FileLength,
 	}
-	ball.Conn.SendMessage(context.Background(), jid, "", &waProto.Message{ ImageMessage: struk })
+	ball.Conn.SendMessage(context.Background(), jid, id, &waProto.Message{ ImageMessage: struk })
 }
 
 func (ball *S) SendVid(jid types.JID, vid []byte, teks string, mime string) {
@@ -80,7 +82,7 @@ func (ball *S) SendVid(jid types.JID, vid []byte, teks string, mime string) {
 		FileSha256: resp.FileSHA256,
 		FileLength: &resp.FileLength,
 	}
-	ball.Conn.SendMessage(context.Background(), jid, "", &waProto.Message{ VideoMessage: struk })
+	ball.Conn.SendMessage(context.Background(), jid, id, &waProto.Message{ VideoMessage: struk })
 }
 
 func (ball *S) SendAud(jid types.JID, aud []byte, mime string) {
@@ -94,7 +96,7 @@ func (ball *S) SendAud(jid types.JID, aud []byte, mime string) {
 		FileSha256: resp.FileSHA256,
 		FileLength: &resp.FileLength,
 	}
-	ball.Conn.SendMessage(context.Background(), jid, "", &waProto.Message{ AudioMessage: struk })
+	ball.Conn.SendMessage(context.Background(), jid, id, &waProto.Message{ AudioMessage: struk })
 }
 
 func (ball *S) SendStik(jid types.JID, stik []byte) {
@@ -108,7 +110,7 @@ func (ball *S) SendStik(jid types.JID, stik []byte) {
 		FileSha256: resp.FileSHA256,
 		FileLength: &resp.FileLength,
 	}
-	ball.Conn.SendMessage(context.Background(), jid, "", &waProto.Message{ StickerMessage: struk })
+	ball.Conn.SendMessage(context.Background(), jid, id, &waProto.Message{ StickerMessage: struk })
 }
 
 func (ball *S) LeaveGc(jid types.JID)  {
